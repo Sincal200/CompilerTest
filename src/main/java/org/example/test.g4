@@ -18,7 +18,7 @@ expr: expr '*' expr     #Modification
 //TOKENS
 ID: [a-z][a-zA-Z0-9_]*;
 NUM: '0' | '-'?[1-9][0-9]*;
-INT_TYPE: 'INT';
+INT_TYPE: 'INT' | 'FLOAT';
 COMMENT: '--' ~[\r\n]* -> skip;
 WS: [ \t\n\r]+ -> skip;
 

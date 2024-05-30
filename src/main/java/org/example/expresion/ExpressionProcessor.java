@@ -45,23 +45,23 @@ public class ExpressionProcessor {
         }else if(e instanceof Variable){
             Variable var = (Variable) e;
             result = values.get(var.id);
-        }else if(e instanceof Addition){
+        }else if(e instanceof Addition){ //adiciona
             Addition add = (Addition) e;
             int left = getEvalResult(add.left);
             int right = getEvalResult(add.right);
             result = left + right;
-        }else if(e instanceof Multiplication){ // e instanceof Multiplication
+        }else if(e instanceof Multiplication){ // e instanceof Multiplication multiplica
             Multiplication mul = (Multiplication) e;
             int left = getEvalResult(mul.left);
             int right = getEvalResult(mul.right);
             result = left * right;
-        }else if(e instanceof Subtraction) {
+        }else if(e instanceof Subtraction) { //sustracciona
             Subtraction sub = (Subtraction) e;
             int left = getEvalResult(sub.left);
             int right = getEvalResult(sub.right);
             result = left - right;
         } else {
-            Power pow = (Power) e;
+            Power pow = (Power) e; //poderea
             int left = getEvalResult(pow.left);
             int right = getEvalResult(pow.right);
             result = (int) Math.pow(left,right);

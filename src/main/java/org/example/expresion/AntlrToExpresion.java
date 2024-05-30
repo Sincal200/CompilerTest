@@ -1,5 +1,6 @@
 package org.example.expresion;
 
+import com.sun.jdi.IntegerValue;
 import org.antlr.v4.runtime.Token;
 import org.example.testBaseVisitor;
 import org.example.testParser;
@@ -81,6 +82,7 @@ public class AntlrToExpresion extends testBaseVisitor<Expression> {
     public Expression visitDivision(testParser.DivisionContext ctx){
         Expression left = visit(ctx.getChild(0)); //recursively visit the current Multiplication node
         Expression right = visit(ctx.getChild(2)); //recursively visit the right Multiplication node
+        String id = ctx.getChild(0).getText();
         return new Division(left, right);
     }
 

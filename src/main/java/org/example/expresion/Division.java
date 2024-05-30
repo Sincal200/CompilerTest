@@ -13,6 +13,4 @@ public class Division extends Expression{
     public String toString() {
         return left.toString() + " / " + right.toString();
     }
-
-
 }

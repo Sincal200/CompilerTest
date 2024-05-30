@@ -27,7 +27,7 @@ public class testParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "':'", "'='", "'*'", "'+'", "'-'", "'/'", "'^'", null, null, "'INT'"
+			null, "':'", "'='", "'*'", "'+'", "'-'", "'/'", "'^'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();

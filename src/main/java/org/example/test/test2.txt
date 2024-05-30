@@ -1,5 +1,4 @@
 i: INT = 5
- i: INT = 7
-j = i + 23 : INT
+j: INT = 5
 24 * k
-   i: INT = 9
+k: INT = 9
