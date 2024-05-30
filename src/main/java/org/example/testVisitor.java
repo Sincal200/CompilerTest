@@ -46,10 +46,31 @@ public interface testVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitVariable(testParser.VariableContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Subtraction}
+	 * labeled alternative in {@link testParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubtraction(testParser.SubtractionContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Number}
 	 * labeled alternative in {@link testParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitNumber(testParser.NumberContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Division}
+	 * labeled alternative in {@link testParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDivision(testParser.DivisionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Power}
+	 * labeled alternative in {@link testParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPower(testParser.PowerContext ctx);
 }

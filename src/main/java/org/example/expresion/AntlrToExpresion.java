@@ -76,4 +76,25 @@ public class AntlrToExpresion extends testBaseVisitor<Expression> {
         int num = Integer.parseInt(numText);
         return new Number(num);
     }
+
+    @Override
+    public Expression visitDivision(testParser.DivisionContext ctx){
+        Expression left = visit(ctx.getChild(0)); //recursively visit the current Multiplication node
+        Expression right = visit(ctx.getChild(2)); //recursively visit the right Multiplication node
+        return new Division(left, right);
+    }
+
+    @Override
+    public Expression visitPower(testParser.PowerContext ctx){
+        Expression left = visit(ctx.getChild(0));
+        Expression right = visit(ctx.getChild(2));
+        return new Power(left,right);
+    }
+
+    @Override
+    public Expression visitSubtraction(testParser.SubtractionContext ctx){
+        Expression left = visit(ctx.getChild(0));
+        Expression right = visit(ctx.getChild(2));
+        return new Subtraction(left,right);
+    }
 }

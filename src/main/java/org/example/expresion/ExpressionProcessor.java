@@ -22,9 +22,13 @@ public class ExpressionProcessor {
                 VariableDeclaration decl = (VariableDeclaration) e;
                 values.put(decl.id,decl.value);
             }
-            else {//e instanceof Number, Variable, Addition, Subtraction
+            else if(e instanceof Power || e instanceof Multiplication || e instanceof Addition || e instanceof Subtraction || e instanceof Number || e instanceof Variable){
                 String input = e.toString();
                 int result = getEvalResult(e);
+                evaluations.add(input + " is " + result);
+            }else{
+                String input = e.toString();
+                double result = getEvalDivResult(e);
                 evaluations.add(input + " is " + result);
             }
         }
@@ -46,12 +50,35 @@ public class ExpressionProcessor {
             int left = getEvalResult(add.left);
             int right = getEvalResult(add.right);
             result = left + right;
-        }else{ // e instanceof Multiplication
+        }else if(e instanceof Multiplication){ // e instanceof Multiplication
             Multiplication mul = (Multiplication) e;
             int left = getEvalResult(mul.left);
             int right = getEvalResult(mul.right);
             result = left * right;
+        }else if(e instanceof Subtraction) {
+            Subtraction sub = (Subtraction) e;
+            int left = getEvalResult(sub.left);
+            int right = getEvalResult(sub.right);
+            result = left - right;
+        } else {
+            Power pow = (Power) e;
+            int left = getEvalResult(pow.left);
+            int right = getEvalResult(pow.right);
+            result = (int) Math.pow(left,right);
         }
         return result;
     }
+
+    private double getEvalDivResult(Expression e){
+        double result = 0;
+        if(e instanceof Division){
+            Division div = (Division) e;
+            double left = getEvalResult(div.left);
+            double right = getEvalResult(div.right);
+            return left / right;
+        }
+        return result;
+    }
+
+
 }

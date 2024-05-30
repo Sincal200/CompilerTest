@@ -68,6 +68,18 @@ public interface testListener extends ParseTreeListener {
 	 */
 	void exitVariable(testParser.VariableContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code Subtraction}
+	 * labeled alternative in {@link testParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterSubtraction(testParser.SubtractionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Subtraction}
+	 * labeled alternative in {@link testParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitSubtraction(testParser.SubtractionContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code Number}
 	 * labeled alternative in {@link testParser#expr}.
 	 * @param ctx the parse tree
@@ -79,4 +91,28 @@ public interface testListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNumber(testParser.NumberContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Division}
+	 * labeled alternative in {@link testParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterDivision(testParser.DivisionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Division}
+	 * labeled alternative in {@link testParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitDivision(testParser.DivisionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Power}
+	 * labeled alternative in {@link testParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterPower(testParser.PowerContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Power}
+	 * labeled alternative in {@link testParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitPower(testParser.PowerContext ctx);
 }

@@ -8,6 +8,9 @@ decl: ID ':' INT_TYPE '=' NUM #Delcaration
  //ANTLR resolves the ambiguity by choosing the first alternative in the rule.
 expr: expr '*' expr     #Modification
     | expr '+' expr     #Addition
+    | expr '-' expr     #Subtraction
+    | expr '/' expr     #Division
+    | expr '^' expr     #Power
     | ID                #Variable
     | NUM               #Number
     ;
